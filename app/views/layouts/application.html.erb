@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Water Demo</title>
+<%= csrf_meta_tag %>
+
+
+<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600", "application"%>
+<%= yield :style %>
+
+<%= javascript_include_tag "application", "responsive" %>
+</head>
+<body>
+
+
+<%= render 'shared/header' %>
+
+ 
+
+<section class="round">
+	<% flash.each do |key, value| %>
+<div class="flash <%= key %>"><%= value %></div>
+<% end %>
+
+<center>
+<%= yield %>
+</center>
+</section>
+
+<%= render 'shared/footer' %>
+
+</body>
+</html>

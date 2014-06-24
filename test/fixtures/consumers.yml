@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  consumer_no: 1
+  consumer_name: MyString
+  bill_month: MyString
+  due_date: 2014-06-24
+  arrear: 1.5
+  last_bill_amount: MyString
+  last_paid_date: 2014-06-24
+  current_dues: 1
+  net_bill_amt: 1
+
+two:
+  consumer_no: 1
+  consumer_name: MyString
+  bill_month: MyString
+  due_date: 2014-06-24
+  arrear: 1.5
+  last_bill_amount: MyString
+  last_paid_date: 2014-06-24
+  current_dues: 1
+  net_bill_amt: 1

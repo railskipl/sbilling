@@ -1,0 +1,352 @@
+<div class="container">
+
+
+<% unless signed_in? %>
+<%= form_for(:session, :url => sessions_path, :html => {:class => "login-fields"}) do |f| %>
+
+<div class="account-container stacked">
+  
+  <div class="content clearfix">
+    
+    
+    
+      <h1>Sign In</h1>    
+      
+        
+        <p>Sign in using your registered account:</p>
+      
+       
+        <div class="field">
+                    <div class="input-prepend">
+                       
+                       <%= f.text_field :username ,:placeholder=>"Username", :class=>"login username-field" %>
+                    </div>
+                </div>
+
+
+        <div class="field">
+                    <div class="input-prepend">
+                        
+                       <%= f.password_field :password,:placeholder=>"Password", :class=>"login password-field" %>
+                    </div>
+                </div>
+
+        <p><%#= link_to "forgotten password?", new_password_reset_path %></p>
+
+
+        <label class="checkbox">
+          <%#= check_box_tag :remember_me, 1, params[:remember_me] %>
+          <%#= label_tag :remember_me %>
+        </label>
+
+
+        <button type="submit" class="btn btn-large btn-primary">Sign in</button>
+        
+        
+    
+    <% end %>
+    
+    <% else %>
+       <% if current_user.role_id == 1 %>
+
+         <b style="float:right">Welcome, Super User</b>
+
+      <div class="container">
+    <div class="row">
+        
+    <div style="margin-top:20px" class="widget stacked">
+            
+            <div class="widget-header">
+              <i class="icon-pencil"></i>
+              <h3>DASHBOARD</h3>
+          </div> <!-- /widget-header -->
+        
+        <div class="widget-content">
+      
+        <div class="row-fluid">
+          <div class="span6">
+          
+          </div>
+          
+          <div class="span6" style="text-align:right">
+          <%= link_to "Search and Approve MRUs", search_consumers_path, :class=>"btn btn-success" %>
+          </div>
+          
+          
+          
+          </div>
+        
+<br>
+        <section id="tables">
+          
+          <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-bordered table-striped table-highlight">
+   <thead>        
+  <tr>
+ 
+    <th>Zone_no</th>
+    <th>Zone Name</th>
+    <th>Total Consumers</th>
+    <th>Active Consumers</th>
+    <th>Meter Reading Completed</th>
+    <th>MR Quality Gate #1</th>
+    <th>MR Quality Gate #2</th>
+    <th>MR Quality Gate #3</th>
+  </tr>
+  </thead>
+  <tbody><tr>
+    <td>1</td>
+    <td>Laxmi Nagar</td>
+    <td>28013</td>
+    <td>27329</td>
+    <td style="background:#63be7b">16398</td>
+    <td>1000</td>
+    <td>900</td>
+    <td>800</td>
+  </tr>
+  <tr>
+    <td>2-A</td>
+    <td>Dharampeth</td>
+    <td>8361</td>
+    <td>7898</td>
+    <td style="background:#f8696b">2370</td>
+    <td>600</td>
+    <td>500</td>
+    <td>400</td>
+  </tr>
+  <tr>
+    <td>2-B</td>
+    <td>Demo</td>
+    <td>16557</td>
+    <td>9140</td>
+    <td style="background:#fba376">5484</td>
+    <td>800</td>
+    <td>700</td>
+    <td>600</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Hanuman Nagar </td>
+    <td>25842</td>
+    <td>25526</td>
+    <td style="background:#7bc57d">15316</td>
+    <td>900</td>
+    <td>800</td>
+    <td>700</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Dhantoli</td>
+    <td>14449</td>
+    <td>13779</td>
+    <td style="background:#bcd881">12402</td>
+    <td>650</td>
+    <td>500</td>
+    <td>440</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Nehru Nagar </td>
+    <td>27796</td>
+    <td>27446</td>
+    <td style="background:#fdd680">8234</td>
+    <td>850</td>
+    <td>600</td>
+    <td>550</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Gandhi Bagh </td>
+    <td>11096</td>
+    <td>10379</td>
+    <td style="background:#ffeb84">9342</td>
+    <td>520</td>
+    <td>400</td>
+    <td>300</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Satranjipura</td>
+    <td>10849</td>
+    <td>10336</td>
+    <td style="background:#ffeb84">9303</td>
+    <td>450</td>
+    <td>300</td>
+    <td>200</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Lakadganj</td>
+    <td>24232</td>
+    <td>23689</td>
+    <td style="background:#fcc17b">7107</td>
+    <td>800</td>
+    <td>700</td>
+    <td>600</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Ashi Nagar</td>
+    <td>17339</td>
+    <td>16954</td>
+    <td style="background:#7dc67d">15259</td>
+    <td>700</td>
+    <td>600</td>
+    <td>500</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Mangalwari</td>
+    <td>18232</td>
+    <td>17518</td>
+    <td style="background:#e6e483">10511</td>
+    <td>750</td>
+    <td>600</td>
+    <td>550</td>
+  </tr>
+</tbody></table>                  
+</section>
+      </div> <!-- /widget-content --> 
+    </div>
+        </div>
+      </div>
+
+
+         
+       <% elsif current_user.role_id == 3 %>
+        <b style="float:right">Welcome, SPM User</b>
+        <div class="container">
+    <div class="row">
+       <div style="margin-top:20px" class="widget stacked">
+            
+            <div class="widget-header">
+              <i class="icon-pencil"></i>
+              <h3>DASHBOARD</h3>
+          </div> <!-- /widget-header -->
+        
+        <div class="widget-content">
+      
+        <div class="row-fluid">
+          <div class="span6">
+          
+          </div>
+          
+          <div class="span6" style="text-align:right">
+          <%= link_to "Search and Approve MRUs", search_consumers_path, :class=>"btn btn-success" %>
+          </div>
+          </div>
+          <br>
+        <section id="tables">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-bordered table-striped table-highlight">
+   <thead>        
+  <tr>
+ 
+    <th>Zone Name </th>
+    <th>MRU</th>
+    <th>Consumers</th>
+    <th>Quality Gate Status</th>
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody><tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - A</td>
+    <td>145</td>
+    <td style="background:#c6efce">Pass</td>
+    <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+    <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - B </td>
+    <td>150</td>
+    <td style="background:#c6efce">Pass</td>
+    <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+    <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - C </td>
+    <td>166</td>
+    <td style="background:#ffeb9c">Yet to review</td>
+    <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+    <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - D </td>
+    <td>150</td>
+    <td style="background:#ffc7ce">Fail</td>
+    <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+    <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - E </td>
+    <td>143</td>
+    <td style="background:#c6efce">Pass</td>
+    <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+    <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - F </td>
+    <td>150</td>
+    <td style="background:#c6efce">Pass</td>
+    <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+    <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - G </td>
+    <td>121</td>
+    <td style="background:#ffeb9c">Yet to review</td>
+    <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+    <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - H </td>
+    <td>201</td>
+    <td style="background:#ffeb9c">Yet to review</td>
+   <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+   <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - I </td>
+    <td>135</td>
+    <td style="background:#ffeb9c">Yet to review</td>
+    <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+    <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - J </td>
+    <td>150</td>
+    <td style="background:#ffeb9c">Yet to review</td>
+   <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+   <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+  <tr>
+    <td>Laxmi Nagar</td>
+    <td>Laxmi Nagar - K </td>
+    <td>160</td>
+    <td style="background:#ffeb9c">Yet to review</td>
+   <td><%= link_to "View Exceptions", exception_consumers_path, :class=>"btn btn-success" %></td>
+   <td><a class="btn btn-success" href="#">Approve MRU</a></td>
+  </tr>
+</tbody></table>          
+</section>
+      </div> <!-- /widget-content -->
+          
+    </div>
+     </div>
+      </div>
+         
+       <% else %>
+        <h2>Dashboard Page </h2>
+      <% end %>
+    <% end %>
+
+</div>

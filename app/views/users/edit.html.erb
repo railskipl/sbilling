@@ -1,0 +1,102 @@
+<%= javascript_include_tag "prototype" %>
+
+  <div class="container"> 
+          
+      <%= form_for(@user, :html => { :class => "form-horizontal" }) do |f| %>           
+          
+          <div class="widget stacked ">
+            
+            <div class="widget-header">
+              <i class="icon-pencil"></i>
+              <h3>Editing User</h3>
+          </div> 
+        
+        <div class="widget-content">
+        
+                
+
+                
+            <% if @user.errors.any? %>
+            <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+            </ul>
+            </div>
+            <% end %>
+                <div class="control-group">
+                    <label for="inputName" class="control-label">
+                        Name</label>
+                    <div class="controls">
+                         <%= f.text_field :name %>
+                    </div>
+                </div>
+               
+               
+        
+            
+
+
+            <div class="control-group">
+                        <label for="inputName" class="control-label">
+                           Email</label>
+                        <div class="controls">
+                           <%= f.text_field :email %>
+         
+                        </div>
+            </div>
+            
+                   
+                   
+
+                                    
+
+            <div class="control-group">
+                        <div class="controls">
+                            <button class="btn btn-primary" type="submit">
+                                Update</button>&nbsp;
+                                 <td><%= link_to "Back",@user, :class=>"btn", :style => "float:bottom"%></td> 
+                            
+                        </div>
+            </div>
+                  
+          
+      </div>
+      <% end %>
+
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<h1>Edit user</h1>
+<%= form_for(@user) do |f| %>
+<%= render 'shared/error_messages', :object => f.object %>
+<div class="field">
+<%= f.label :name %><br />
+<%= f.text_field :name %>
+</div>
+<div class="field">
+<%= f.label :email %><br />
+<%= f.text_field :email %>
+</div>
+
+<div class="actions">
+<%= f.submit "Update" %>
+</div>
+<% end %>
+<div>
+
+</div> -->

@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Consumer no:</b>
+  <%= @consumer.consumer_no %>
+</p>
+
+<p>
+  <b>Consumer name:</b>
+  <%= @consumer.consumer_name %>
+</p>
+
+<p>
+  <b>Bill month:</b>
+  <%= @consumer.bill_month %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%= @consumer.due_date %>
+</p>
+
+<p>
+  <b>Arrear:</b>
+  <%= @consumer.arrear %>
+</p>
+
+<p>
+  <b>Last bill amount:</b>
+  <%= @consumer.last_bill_amount %>
+</p>
+
+<p>
+  <b>Last paid date:</b>
+  <%= @consumer.last_paid_date %>
+</p>
+
+<p>
+  <b>Current dues:</b>
+  <%= @consumer.current_dues %>
+</p>
+
+<p>
+  <b>Net bill amt:</b>
+  <%= @consumer.net_bill_amt %>
+</p>
+
+
+<%= link_to 'Edit', edit_consumer_path(@consumer) %> |
+<%= link_to 'Back', consumers_path %>
